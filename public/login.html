@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceder - EncuentraMiMascota</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Cabecera -->
+  <header class="main-header">
+    <div class="container navbar">
+      <a href="/index.html" class="brand">
+        <span class="brand-icon">🐾</span>
+        <span>EncuentraMiMascota</span>
+      </a>
+      <ul class="nav-links" id="navbar-links">
+        <!-- Renderizado dinámico desde api.js -->
+      </ul>
+    </div>
+  </header>
+
+  <!-- Contenedor del Formulario -->
+  <main class="container">
+    <div class="form-container">
+      <h2 id="auth-title" class="form-title">Iniciar Sesión</h2>
+      
+      <!-- Mensaje de Feedback -->
+      <div id="auth-message" class="message"></div>
+
+      <form id="auth-form">
+        <!-- Nombre (solo para Registro, inicia oculto) -->
+        <div class="form-group" id="name-group" style="display: none;">
+          <label for="name" class="form-label">Nombre Completo</label>
+          <input type="text" id="name" class="form-input" placeholder="Ej. Carlos Gómez">
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input type="email" id="email" class="form-input" placeholder="correo@ejemplo.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" id="password" class="form-input" placeholder="Mínimo 6 caracteres" required>
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn btn-primary form-submit-btn">Ingresar</button>
+      </form>
+
+      <p class="form-switch-text" id="switch-container">
+        ¿No tienes cuenta? <span class="form-switch-link" id="switch-to-register">Regístrate aquí</span>
+      </p>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2026 EncuentraMiMascota - Proyecto de Tecnología BTH</p>
+      <p>Creado para la defensa de grado en Sistemas Informáticos</p>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>

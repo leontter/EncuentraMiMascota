@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - EncuentraMiMascota</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Cabecera y Navegación -->
+  <header class="main-header">
+    <div class="container navbar">
+      <a href="/index.html" class="brand">
+        <span class="brand-icon">🐾</span>
+        <span>EncuentraMiMascota</span>
+      </a>
+      <ul class="nav-links" id="navbar-links">
+        <!-- Generado dinámicamente por api.js -->
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero y Buscador -->
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="hero-title">Reporta y encuentra a tu mejor amigo</h1>
+      <p class="hero-subtitle">Ayúdanos a reunir a las mascotas perdidas con sus familias. Publica un anuncio o busca reportes en tu zona.</p>
+      
+      <div class="search-container">
+        <input type="text" id="search-input" class="search-input" placeholder="Buscar por nombre de mascota, zona o descripción...">
+      </div>
+    </div>
+  </section>
+
+  <!-- Listado de Anuncios -->
+  <main class="container posts-section">
+    <h2 class="section-title" id="posts-title">Mascotas Reportadas Recientemente</h2>
+    
+    <!-- Cuadrícula de anuncios -->
+    <div class="posts-grid" id="posts-grid">
+      <!-- Los anuncios se cargarán dinámicamente con JavaScript -->
+      <div style="text-align: center; grid-column: 1/-1; padding: 40px; color: var(--text-light);">
+        Cargando reportes de mascotas...
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2026 EncuentraMiMascota - Proyecto de Tecnología BTH</p>
+      <p>Creado para la defensa de grado en Sistemas Informáticos</p>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

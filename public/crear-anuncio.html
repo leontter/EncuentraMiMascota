@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportar Mascota Perdida - EncuentraMiMascota</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Cabecera -->
+  <header class="main-header">
+    <div class="container navbar">
+      <a href="/index.html" class="brand">
+        <span class="brand-icon">🐾</span>
+        <span>EncuentraMiMascota</span>
+      </a>
+      <ul class="nav-links" id="navbar-links">
+        <!-- Renderizado dinámico desde api.js -->
+      </ul>
+    </div>
+  </header>
+
+  <!-- Formulario de Creación -->
+  <main class="container">
+    <!-- Verificar si está logueado -->
+    <script>
+      // Protección frontend simple: si no está logueado, redirigir a login
+      if (!localStorage.getItem('token')) {
+        window.location.href = '/login.html';
+      }
+    </script>
+
+    <div class="form-container" style="max-width: 600px;">
+      <h2 class="form-title">Reportar Mascota Perdida</h2>
+      
+      <!-- Mensajes de feedback -->
+      <div id="form-message" class="message"></div>
+
+      <form id="create-post-form" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="pet-name" class="form-label">Nombre de la Mascota *</label>
+          <input type="text" id="pet-name" class="form-input" placeholder="Ej. Toby, Pelusa" required>
+        </div>
+
+        <div class="form-group">
+          <label for="pet-location" class="form-label">Lugar donde se perdió *</label>
+          <input type="text" id="pet-location" class="form-input" placeholder="Ej. Av. América y Villarroel, Cochabamba" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-phone" class="form-label">Teléfono de Contacto *</label>
+          <input type="tel" id="contact-phone" class="form-input" placeholder="Ej. 71234567" required>
+        </div>
+
+        <div class="form-group">
+          <label for="pet-reward" class="form-label">Recompensa (Bs.)</label>
+          <input type="number" id="pet-reward" class="form-input" placeholder="Ej. 500 (Opcional, 0 si no hay)" min="0" value="0">
+        </div>
+
+        <div class="form-group">
+          <label for="pet-description" class="form-label">Descripción detallada de la mascota *</label>
+          <textarea id="pet-description" class="form-input" placeholder="Color, raza, tamaño, collar, señas particulares, comportamiento..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="pet-photo" class="form-label">Foto de la Mascota</label>
+          <input type="file" id="pet-photo" class="form-input" accept="image/*">
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit-btn">Publicar Anuncio</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2026 EncuentraMiMascota - Proyecto de Tecnología BTH</p>
+      <p>Creado para la defensa de grado en Sistemas Informáticos</p>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('create-post-form');
+      const formMessage = document.getElementById('form-message');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        hideMessage();
+
+        const name = document.getElementById('pet-name').value.trim();
+        const location = document.getElementById('pet-location').value.trim();
+        const phone = document.getElementById('contact-phone').value.trim();
+        const reward = document.getElementById('pet-reward').value;
+        const description = document.getElementById('pet-description').value.trim();
+        const photoFile = document.getElementById('pet-photo').files[0];
+
+        // Crear FormData para enviar el archivo
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('location', location);
+        formData.append('phone', phone);
+        formData.append('reward', reward);
+        formData.append('description', description);
+        if (photoFile) {
+          formData.append('photo', photoFile);
+        }
+
+        try {
+          const result = await apiFetch('/posts', {
+            method: 'POST',
+            body: formData
+            // Note: apiFetch sets Authorization automatically, and skips setting Content-Type for FormData
+          });
+
+          showMessage('¡Anuncio publicado con éxito! Redirigiendo...', 'success');
+          form.reset();
+
+          setTimeout(() => {
+            window.location.href = '/index.html';
+          }, 1500);
+
+        } catch (err) {
+          showMessage(err.message, 'danger');
+        }
+      });
+
+      function showMessage(text, type) {
+        formMessage.textContent = text;
+        formMessage.className = `message message-${type}`;
+        formMessage.style.display = 'block';
+      }
+
+      function hideMessage() {
+        formMessage.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

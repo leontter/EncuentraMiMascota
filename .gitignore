@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+mascotas.db-journal
+mascotas.db-shm
+mascotas.db-wal
+# Opcional: ignorar las fotos de prueba subidas por los usuarios, pero no el icono por defecto
+public/uploads/pet-*

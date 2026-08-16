@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle Mascota - EncuentraMiMascota</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Cabecera -->
+  <header class="main-header">
+    <div class="container navbar">
+      <a href="/index.html" class="brand">
+        <span class="brand-icon">🐾</span>
+        <span>EncuentraMiMascota</span>
+      </a>
+      <ul class="nav-links" id="navbar-links">
+        <!-- Renderizado dinámico desde api.js -->
+      </ul>
+    </div>
+  </header>
+
+  <!-- Detalle del Anuncio -->
+  <main class="container">
+    <div id="feedback-msg" class="message"></div>
+
+    <div class="post-detail-layout">
+      
+      <!-- Detalle Principal (Izquierda) -->
+      <section class="post-detail-card">
+        <div class="detail-img-container">
+          <img id="pet-img" src="/uploads/default-pet.svg" alt="Mascota" class="detail-img">
+        </div>
+        
+        <div class="detail-body">
+          <div class="detail-header">
+            <h1 id="pet-name" class="detail-title">Nombre</h1>
+            <span id="pet-status-badge" class="badge-status">Perdido</span>
+          </div>
+
+          <!-- Caja de Recompensa (Solo se muestra si hay) -->
+          <div id="reward-container" class="detail-reward-box" style="display: none;">
+            <span class="detail-reward-label">Recompensa ofrecida:</span>
+            <span id="pet-reward-val" class="detail-reward-amount">500 Bs.</span>
+          </div>
+
+          <!-- Grilla de Información -->
+          <div class="detail-info-grid">
+            <div class="info-item">
+              <div class="info-item-label">Se perdió en</div>
+              <div id="pet-location" class="info-item-value">Ubicación</div>
+            </div>
+            <div class="info-item">
+              <div class="info-item-label">Teléfono de contacto</div>
+              <div id="pet-phone" class="info-item-value">Contacto</div>
+            </div>
+            <div class="info-item">
+              <div class="info-item-label">Reportado por</div>
+              <div id="pet-owner" class="info-item-value">Usuario</div>
+            </div>
+            <div class="info-item">
+              <div class="info-item-label">Fecha de publicación</div>
+              <div id="pet-date" class="info-item-value">Fecha</div>
+            </div>
+          </div>
+
+          <!-- Descripción -->
+          <p id="pet-description" class="detail-description">Descripción detallada...</p>
+
+          <!-- Acciones de Dueño / Admin -->
+          <div id="owner-actions" class="detail-actions" style="display: none;">
+            <button id="toggle-status-btn" class="btn btn-success">Marcar como Encontrado</button>
+            <button id="delete-post-btn" class="btn btn-danger">Eliminar Publicación</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Comentarios (Derecha) -->
+      <section class="comments-section">
+        <h2 class="comments-title">Comentarios de la Comunidad</h2>
+        
+        <!-- Listado de comentarios -->
+        <div id="comments-list" class="comment-list">
+          <!-- Cargados dinámicamente con JS -->
+          <p style="color: var(--text-light); text-align: center; padding: 20px;">Cargando comentarios...</p>
+        </div>
+
+        <!-- Formulario para agregar comentarios -->
+        <div class="comment-form-container">
+          <div id="comment-form-wrapper" style="display: none;">
+            <form id="comment-form">
+              <div class="form-group" style="margin-bottom: 12px;">
+                <label for="comment-content" class="form-label">Escribir un comentario</label>
+                <textarea id="comment-content" class="form-input" placeholder="Aporta pistas, ayuda o apoyo a la familia..." required style="min-height: 80px;"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-sm">Enviar Comentario</button>
+            </form>
+          </div>
+          
+          <div id="comment-login-msg" class="comment-login-msg">
+            Debes <a href="/login.html">iniciar sesión</a> para poder escribir un comentario.
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2026 EncuentraMiMascota - Proyecto de Tecnología BTH</p>
+      <p>Creado para la defensa de grado en Sistemas Informáticos</p>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/post.js"></script>
+</body>
+</html>

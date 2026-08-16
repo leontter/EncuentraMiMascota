@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración - EncuentraMiMascota</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Cabecera -->
+  <header class="main-header">
+    <div class="container navbar">
+      <a href="/index.html" class="brand">
+        <span class="brand-icon">🐾</span>
+        <span>EncuentraMiMascota</span>
+      </a>
+      <ul class="nav-links" id="navbar-links">
+        <!-- Renderizado dinámico desde api.js -->
+      </ul>
+    </div>
+  </header>
+
+  <!-- Contenedor del Panel -->
+  <main class="container" style="padding-top: 30px;">
+    <!-- Protección frontend simple para Admin -->
+    <script>
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (!user || user.role !== 'admin') {
+        window.location.href = '/index.html';
+      }
+    </script>
+
+    <h1 style="margin-bottom: 25px; color: var(--primary-color);">Panel de Control de Administrador</h1>
+    
+    <!-- Mensajes de feedback -->
+    <div id="admin-message" class="message"></div>
+
+    <!-- Pestañas de control -->
+    <div class="admin-tabs">
+      <button class="tab-btn active" id="tab-users-btn">Gestionar Usuarios</button>
+      <button class="tab-btn" id="tab-posts-btn">Gestionar Publicaciones</button>
+    </div>
+
+    <!-- SECCIÓN USUARIOS -->
+    <section id="section-users">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h2 style="font-size: 1.3rem; color: var(--text-dark);">Lista de Usuarios Registrados</h2>
+        <button id="create-user-btn" class="btn btn-primary btn-sm">➕ Crear Nuevo Usuario</button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Correo Electrónico</th>
+              <th>Rol</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="users-table-body">
+            <!-- Cargado con JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECCIÓN PUBLICACIONES -->
+    <section id="section-posts" style="display: none;">
+      <h2 style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 20px;">Lista de Anuncios Publicados</h2>
+      
+      <div class="table-responsive">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Foto</th>
+              <th>Mascota</th>
+              <th>Ubicación</th>
+              <th>Contacto</th>
+              <th>Recompensa</th>
+              <th>Estado</th>
+              <th>Creado Por</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="posts-table-body">
+            <!-- Cargado con JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL USUARIO (CREAR Y EDITAR) -->
+  <div class="modal" id="user-modal">
+    <div class="modal-content">
+      <button class="close-modal-btn" id="close-user-modal">&times;</button>
+      <h3 class="form-title" id="user-modal-title">Crear Usuario</h3>
+      <form id="user-modal-form">
+        <input type="hidden" id="user-id-hidden">
+        
+        <div class="form-group">
+          <label for="modal-user-name" class="form-label">Nombre Completo *</label>
+          <input type="text" id="modal-user-name" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-user-email" class="form-label">Correo Electrónico *</label>
+          <input type="email" id="modal-user-email" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-user-password" class="form-label" id="password-label">Contraseña *</label>
+          <input type="password" id="modal-user-password" class="form-input" placeholder="Min. 6 caracteres">
+        </div>
+
+        <div class="form-group">
+          <label for="modal-user-role" class="form-label">Rol del Usuario *</label>
+          <select id="modal-user-role" class="form-input" required>
+            <option value="user">Usuario Regular</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit-btn" id="user-submit-btn">Guardar Usuario</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL EDITAR PUBLICACIÓN -->
+  <div class="modal" id="post-modal">
+    <div class="modal-content">
+      <button class="close-modal-btn" id="close-post-modal">&times;</button>
+      <h3 class="form-title">Modificar Anuncio</h3>
+      <form id="post-modal-form">
+        <input type="hidden" id="post-id-hidden">
+
+        <div class="form-group">
+          <label for="modal-post-name" class="form-label">Nombre de Mascota *</label>
+          <input type="text" id="modal-post-name" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-post-location" class="form-label">Ubicación *</label>
+          <input type="text" id="modal-post-location" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-post-phone" class="form-label">Teléfono de Contacto *</label>
+          <input type="tel" id="modal-post-phone" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-post-reward" class="form-label">Recompensa (Bs.)</label>
+          <input type="number" id="modal-post-reward" class="form-input" required min="0">
+        </div>
+
+        <div class="form-group">
+          <label for="modal-post-status" class="form-label">Estado *</label>
+          <select id="modal-post-status" class="form-input" required>
+            <option value="Perdido">Perdido</option>
+            <option value="Encontrado">Encontrado</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-post-desc" class="form-label">Descripción *</label>
+          <textarea id="modal-post-desc" class="form-input" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit-btn">Guardar Cambios</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2026 EncuentraMiMascota - Proyecto de Tecnología BTH</p>
+      <p>Creado para la defensa de grado en Sistemas Informáticos</p>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
