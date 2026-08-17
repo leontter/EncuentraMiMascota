@@ -217,40 +217,85 @@ app.post('/api/posts', authenticateToken, upload.single('photo'), async (req, re
   }
 });
 
-// Modificar publicación (Dueño o Administrador)
-app.put('/api/posts/:id', authenticateToken, async (req, res) => {
+// Modificar publicación (Dueño o Administrador) - Soporta actualizar datos y/o cambiar foto
+app.put('/api/posts/:id', authenticateToken, upload.single('photo'), async (req, res) => {
   const { name, location, phone, description, reward, status } = req.body;
   const postId = req.params.id;
 
   try {
     // Verificar si existe la publicación y quién la posee
-    const post = await dbQuery.get('SELECT user_id, photo_url FROM posts WHERE id = ?', [postId]);
+    const post = await dbQuery.get('SELECT * FROM posts WHERE id = ?', [postId]);
     if (!post) {
+      if (req.file && fs.existsSync(req.file.path)) {
+        try { fs.unlinkSync(req.file.path); } catch (e) {}
+      }
       return res.status(404).json({ error: 'Publicación no encontrada.' });
     }
 
     // Permitir solo al creador o al admin editar
     if (post.user_id !== req.user.id && req.user.role !== 'admin') {
+      if (req.file && fs.existsSync(req.file.path)) {
+        try { fs.unlinkSync(req.file.path); } catch (e) {}
+      }
       return res.status(403).json({ error: 'No tienes permisos para modificar este anuncio.' });
     }
 
+    let photoUrl = post.photo_url;
+    if (req.file) {
+      photoUrl = `/uploads/${req.file.filename}`;
+      // Eliminar foto anterior si existía y no era la imagen por defecto
+      if (post.photo_url && post.photo_url !== '/uploads/default-pet.svg' && post.photo_url.startsWith('/uploads/')) {
+        const oldFilePath = path.join(__dirname, 'public', post.photo_url);
+        if (fs.existsSync(oldFilePath)) {
+          try {
+            fs.unlinkSync(oldFilePath);
+          } catch (e) {
+            console.error('Error al eliminar foto anterior:', e);
+          }
+        }
+      }
+    }
+
+    const updatedName = name !== undefined ? name : post.name;
+    const updatedLocation = location !== undefined ? location : post.location;
+    const updatedPhone = phone !== undefined ? phone : post.phone;
+    const updatedDescription = description !== undefined ? description : post.description;
+    const updatedReward = reward !== undefined && reward !== '' ? parseFloat(reward) : post.reward;
+    const updatedStatus = status !== undefined ? status : post.status;
+
     await dbQuery.run(
       `UPDATE posts 
-       SET name = ?, location = ?, phone = ?, description = ?, reward = ?, status = ? 
+       SET name = ?, location = ?, phone = ?, description = ?, reward = ?, status = ?, photo_url = ? 
        WHERE id = ?`,
       [
-        name || post.name,
-        location || post.location,
-        phone || post.phone,
-        description || post.description,
-        reward !== undefined ? parseFloat(reward) : post.reward,
-        status || post.status,
+        updatedName,
+        updatedLocation,
+        updatedPhone,
+        updatedDescription,
+        updatedReward,
+        updatedStatus,
+        photoUrl,
         postId
       ]
     );
 
-    res.json({ message: 'Publicación actualizada correctamente.' });
+    res.json({ 
+      message: 'Publicación actualizada correctamente.',
+      post: {
+        id: postId,
+        name: updatedName,
+        location: updatedLocation,
+        phone: updatedPhone,
+        description: updatedDescription,
+        reward: updatedReward,
+        status: updatedStatus,
+        photo_url: photoUrl
+      }
+    });
   } catch (err) {
+    if (req.file && fs.existsSync(req.file.path)) {
+      try { fs.unlinkSync(req.file.path); } catch (e) {}
+    }
     console.error(err);
     res.status(500).json({ error: 'Error al actualizar publicación.' });
   }
