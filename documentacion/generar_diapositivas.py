@@ -208,7 +208,9 @@ def crear_presentacion():
     tf5.word_wrap = True
     
     bullets5 = [
-        "Registro de Anuncios: Nombre, Ubicación de extravío, Teléfono, Recompensa (en Bs.), Descripción detallada y subida de Foto real.",
+        "Registro y Edición de Anuncios: Nombre, Ubicación de extravío, Teléfono, Recompensa (en Bs.), Descripción detallada y carga de Foto real.",
+        "Actualización Dinámica de Fotos: Los dueños y administradores pueden modificar anuncios y cambiar fotografías con previsualización instantánea.",
+        "Gestión Limpia de Servidor: Al reemplazar fotos o borrar anuncios, el backend limpia automáticamente los archivos obsoletos del disco.",
         "Cambio de Estados: Los reportes cuentan con los estados 'Perdido' (color rojo) y 'Encontrado' (color verde) para un mejor control visual.",
         "Sección de Comentarios: Los usuarios con sesión iniciada pueden aportar pistas y debatir en los anuncios para cooperar.",
         "Buscador Inteligente: Entrada de búsqueda interactiva que filtra por nombre, zona o descripción en tiempo real."
