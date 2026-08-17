@@ -242,6 +242,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join('');
   }
 
+  // Elementos de foto en modal de post
+  const modalPostPhoto = document.getElementById('modal-post-photo');
+  const modalPostPhotoPreview = document.getElementById('modal-post-photo-preview');
+
+  if (modalPostPhoto && modalPostPhotoPreview) {
+    modalPostPhoto.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          modalPostPhotoPreview.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  }
+
   // Cargar anuncio específico y abrir el modal
   window.openEditPostModal = async (id) => {
     try {
@@ -254,6 +271,13 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('modal-post-reward').value = post.reward;
       document.getElementById('modal-post-status').value = post.status;
       document.getElementById('modal-post-desc').value = post.description;
+
+      if (modalPostPhotoPreview) {
+        modalPostPhotoPreview.src = post.photo_url || '/uploads/default-pet.svg';
+      }
+      if (modalPostPhoto) {
+        modalPostPhoto.value = '';
+      }
 
       postModal.classList.add('active');
     } catch (err) {
@@ -273,11 +297,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const description = document.getElementById('modal-post-desc').value.trim();
 
     try {
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('location', location);
+      formData.append('phone', phone);
+      formData.append('reward', reward || '0');
+      formData.append('status', status);
+      formData.append('description', description);
+
+      if (modalPostPhoto && modalPostPhoto.files && modalPostPhoto.files[0]) {
+        formData.append('photo', modalPostPhoto.files[0]);
+      }
+
       await apiFetch(`/posts/${id}`, {
         method: 'PUT',
-        body: JSON.stringify({ name, location, phone, reward, status, description })
+        body: formData
       });
-      showFeedback('Publicación actualizada correctamente.', 'success');
+      showFeedback('Publicación y foto actualizadas correctamente.', 'success');
       postModal.classList.remove('active');
       loadPosts();
     } catch (err) {

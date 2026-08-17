@@ -22,8 +22,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const petDescription = document.getElementById('pet-description');
   
   const ownerActions = document.getElementById('owner-actions');
+  const editPostBtn = document.getElementById('edit-post-btn');
   const toggleStatusBtn = document.getElementById('toggle-status-btn');
   const deletePostBtn = document.getElementById('delete-post-btn');
+
+  // Modal de Edición
+  const editPostModal = document.getElementById('edit-post-modal');
+  const closeEditModalBtn = document.getElementById('close-edit-modal-btn');
+  const editPostForm = document.getElementById('edit-post-form');
+  const editPetName = document.getElementById('edit-pet-name');
+  const editPetLocation = document.getElementById('edit-pet-location');
+  const editPetPhone = document.getElementById('edit-pet-phone');
+  const editPetReward = document.getElementById('edit-pet-reward');
+  const editPetStatus = document.getElementById('edit-pet-status');
+  const editPetDescription = document.getElementById('edit-pet-description');
+  const editPetPhoto = document.getElementById('edit-pet-photo');
+  const editPhotoPreview = document.getElementById('edit-photo-preview');
   
   const commentsList = document.getElementById('comments-list');
   const commentFormWrapper = document.getElementById('comment-form-wrapper');
@@ -41,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     await loadPostDetails();
     await loadComments();
     setupCommentFormVisibility();
+    setupEditModal();
   }
 
   // 1. Cargar detalles del anuncio
@@ -98,8 +113,100 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Configurar Modal de Edición de Publicación y Cambio de Foto
+  function setupEditModal() {
+    if (!editPostModal) return;
+
+    if (closeEditModalBtn) {
+      closeEditModalBtn.onclick = () => {
+        editPostModal.classList.remove('active');
+      };
+    }
+
+    // Cerrar al hacer clic en el fondo oscuro
+    window.addEventListener('click', (e) => {
+      if (e.target === editPostModal) {
+        editPostModal.classList.remove('active');
+      }
+    });
+
+    // Vista previa instantánea al seleccionar nueva imagen
+    if (editPetPhoto) {
+      editPetPhoto.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            editPhotoPreview.src = event.target.result;
+          };
+          reader.readAsDataURL(file);
+        } else if (currentPost) {
+          editPhotoPreview.src = currentPost.photo_url;
+        }
+      });
+    }
+
+    // Envío del formulario de edición con soporte multipart
+    if (editPostForm) {
+      editPostForm.onsubmit = async (e) => {
+        e.preventDefault();
+        const submitBtn = document.getElementById('save-post-btn');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Guardando cambios...';
+        }
+
+        try {
+          const formData = new FormData();
+          formData.append('name', editPetName.value.trim());
+          formData.append('location', editPetLocation.value.trim());
+          formData.append('phone', editPetPhone.value.trim());
+          formData.append('reward', editPetReward.value || '0');
+          formData.append('status', editPetStatus.value);
+          formData.append('description', editPetDescription.value.trim());
+
+          if (editPetPhoto.files && editPetPhoto.files[0]) {
+            formData.append('photo', editPetPhoto.files[0]);
+          }
+
+          await apiFetch(`/posts/${postId}`, {
+            method: 'PUT',
+            body: formData
+          });
+
+          showFeedback('¡Publicación y foto actualizadas con éxito!', 'success');
+          editPostModal.classList.remove('active');
+          await loadPostDetails();
+        } catch (err) {
+          showFeedback(err.message, 'danger');
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Guardar Cambios';
+          }
+        }
+      };
+    }
+  }
+
   // 2. Configurar eventos de botones de dueño/admin
   function setupActionButtons() {
+    // Abrir Modal de Edición
+    if (editPostBtn) {
+      editPostBtn.onclick = () => {
+        if (!currentPost) return;
+        editPetName.value = currentPost.name || '';
+        editPetLocation.value = currentPost.location || '';
+        editPetPhone.value = currentPost.phone || '';
+        editPetReward.value = currentPost.reward || 0;
+        editPetStatus.value = currentPost.status || 'Perdido';
+        editPetDescription.value = currentPost.description || '';
+        editPhotoPreview.src = currentPost.photo_url || '/uploads/default-pet.svg';
+        editPetPhoto.value = ''; // Limpiar selector de archivo
+        editPostModal.classList.add('active');
+      };
+    }
+
     // Alternar Estado (Perdido <-> Encontrado)
     toggleStatusBtn.onclick = async () => {
       const nextStatus = currentPost.status === 'Perdido' ? 'Encontrado' : 'Perdido';
