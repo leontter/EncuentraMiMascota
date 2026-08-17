@@ -1,10 +1,10 @@
 # MONOGRAFÍA DEL PROYECTO DE INNOVACIÓN TECNOLÓGICA
 
 **PROYECTO:** EncuentraMiMascota: Plataforma Web Responsive para el Reporte y Búsqueda de Mascotas Perdidas  
-**ESTUDIANTE:** [Tu Nombre Completo]  
+**ESTUDIANTE:** Ditetter Leon Justiniano  
 **CURSO:** 6to de Secundaria - Bachillerato Técnico Humanístico (BTH)  
 **ESPECIALIDAD:** Sistemas Informáticos  
-**TUTOR:** [Nombre de tu Profesor/Tutor]  
+**TUTOR:** Lic. Ana Gabriela Paz Arauz
 **UNIDAD EDUCATIVA:** [Nombre de tu Colegio]  
 **AÑO:** 2026  
 
