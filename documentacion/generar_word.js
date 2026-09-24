@@ -423,10 +423,21 @@ function createMonografiaDocx() {
                   new TableCell({
                     children: [
                       new Paragraph({
-                        spacing: { before: 100, after: 100 },
+                        spacing: { before: 80, after: 40 },
                         children: [
                           new TextRun({
-                            text: 'Ditetter Leon Justiniano',
+                            text: 'Leon Justiniano',
+                            font: FONT_FAMILY,
+                            size: 24,
+                            color: COLOR_BLACK
+                          })
+                        ]
+                      }),
+                      new Paragraph({
+                        spacing: { before: 40, after: 80 },
+                        children: [
+                          new TextRun({
+                            text: 'Yimmy Lijeron Mejia',
                             font: FONT_FAMILY,
                             size: 24,
                             color: COLOR_BLACK
@@ -684,8 +695,14 @@ function createMonografiaDocx() {
               }),
               new TableRow({
                 children: [
-                  new TableCell({ children: [p('Ditetter Leon Justiniano', { bold: true })] }),
-                  new TableCell({ children: [p('Estudiante postulante – Análisis, diseño, desarrollo y pruebas del sistema web')] })
+                  new TableCell({ children: [p('Leon Justiniano', { bold: true })] }),
+                  new TableCell({ children: [p('Estudiante postulante – Análisis, diseño, desarrollo frontend/backend y pruebas')] })
+                ]
+              }),
+              new TableRow({
+                children: [
+                  new TableCell({ children: [p('Yimmy Lijeron Mejia', { bold: true })] }),
+                  new TableCell({ children: [p('Estudiante postulante – Análisis de requerimientos, diseño UI/UX, desarrollo y documentación')] })
                 ]
               }),
               new TableRow({

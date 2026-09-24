@@ -1,12 +1,16 @@
 # MONOGRAFÍA DEL PROYECTO DE INNOVACIÓN TECNOLÓGICA
 
 **PROYECTO:** EncuentraMiMascota: Plataforma Web Responsive para el Reporte y Búsqueda de Mascotas Perdidas  
-**ESTUDIANTE:** Ditetter Leon Justiniano  
+**POSTULANTES:**  
+- Leon Justiniano  
+- Yimmy Lijeron Mejia  
 **CURSO:** 6to de Secundaria - Bachillerato Técnico Humanístico (BTH)  
 **ESPECIALIDAD:** Sistemas Informáticos  
-**TUTOR:** Lic. Ana Gabriela Paz Arauz
-**UNIDAD EDUCATIVA:** [Nombre de tu Colegio]  
-**AÑO:** 2026  
+**PRESIDENTE DEL COMITÉ DE GESTIÓN DE BTH:** Lic. Edwin Eliseo Huayllani Silvestre  
+**DOCENTE DE ESPECIALIDAD:** Lic. Ana Gabriela Paz Arauz  
+**DOCENTE TUTOR:** Lic. Ronald Silver Quino Torrez  
+**NÚCLEO EDUCATIVO:** Núcleo Educativo "Las Gamas"  
+**UBICACIÓN Y GESTIÓN:** Warnes – Santa Cruz – Bolivia | Gestión 2026  
 
 ---
 
@@ -118,8 +122,8 @@ El proyecto se organizó en un cronograma de 6 semanas:
 -   **Semana 6:** Pruebas de usabilidad, depuración de errores y documentación escrita.
 
 #### 4.3. Recursos
-*   **Humanos:** 1 Estudiante Desarrollador (tú), 1 Maestro Tutor (orientador de BTH).
-*   **Materiales:** 1 Laptop Intel Core i5 con 8GB de RAM, Software Visual Studio Code, Navegador Google Chrome, Git y Node.js runtime instalado.
+*   **Humanos:** 2 Estudiantes Postulantes y Desarrolladores (Leon Justiniano y Yimmy Lijeron Mejia), 1 Docente Tutor (Lic. Ronald Silver Quino Torrez), 1 Docente de Especialidad (Lic. Ana Gabriela Paz Arauz), 40 vecinos para encuestas y 5 usuarios para pruebas de usabilidad.
+*   **Materiales:** 1 Laptop Intel Core i5 con 8GB de RAM, 1 teléfono móvil para pruebas de responsividad, Software Visual Studio Code, Navegador Google Chrome, Git y Node.js runtime instalado.
 *   **Financieros:** La inversión financiera en software es de 0 Bs. debido al uso de herramientas open-source gratuitas. El costo de internet residencial se calcula en los costos fijos.
 
 #### 4.4. Cálculo de costos

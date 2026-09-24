@@ -87,7 +87,7 @@ def crear_presentacion():
     p3.space_after = Pt(40)
     
     p4 = tf1.add_paragraph()
-    p4.text = "Estudiante: [Tu Nombre Completo]\nCurso: 6to de Secundaria BTH - Sistemas Informáticos\nUnidad Educativa: [Nombre de tu Colegio]"
+    p4.text = "Postulantes: Leon Justiniano - Yimmy Lijeron Mejia\nCurso: 6to de Secundaria BTH - Sistemas Informáticos\nNúcleo Educativo: Las Gamas\nDocente Tutor: Lic. Ronald Silver Quino Torrez"
     p4.font.name = 'Arial'
     p4.font.size = Pt(16)
     p4.font.color.rgb = WHITE
@@ -305,6 +305,7 @@ def crear_presentacion():
     tf8.word_wrap = True
     
     costos = [
+        ("Recursos Humanos:", "2 Estudiantes postulantes (Leon Justiniano y Yimmy Lijeron Mejia), 1 Docente tutor (Lic. Ronald Silver Quino Torrez), 1 Docente de especialidad (Lic. Ana Gabriela Paz Arauz)."),
         ("Recursos Materiales y Software:", "Computadora portátil, Visual Studio Code, Git, Node.js y SQLite. Inversión inicial en software de desarrollo: 0 Bs. (Herramientas libres)."),
         ("Costos de Operación Estimados:", "Energía eléctrica y conexión de banda ancha a internet: 170 Bs. mensuales. Plan gratuito de despliegue en la nube."),
         ("Costo Estimado de Desarrollo (Mano de obra):", "120 horas de programación valoradas en 20 Bs. / hora. Costo simulado del proyecto de desarrollo: 2,400 Bs.")
