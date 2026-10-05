@@ -1,14 +1,14 @@
 # MONOGRAFÍA DEL PROYECTO DE INNOVACIÓN TECNOLÓGICA
 
-**PROYECTO:** EncuentraMiMascota: Plataforma Web Responsive para el Reporte y Búsqueda de Mascotas Perdidas  
+**PROYECTO:** ENCUENTRA MI MASCOTA: PLATAFORMA WEB RESPONSIVE PARA EL REPORTE Y BÚSQUEDA DE MASCOTAS PERDIDAS MEDIANTE BYCODING  
 **POSTULANTES:**  
-- Leon Justiniano  
-- Yimmy Lijeron Mejia  
+- Dietter Leon Justiniano  
+- Yimmy Lijeron Mejias  
 **CURSO:** 6to de Secundaria - Bachillerato Técnico Humanístico (BTH)  
 **ESPECIALIDAD:** Sistemas Informáticos  
 **PRESIDENTE DEL COMITÉ DE GESTIÓN DE BTH:** Lic. Edwin Eliseo Huayllani Silvestre  
 **DOCENTE DE ESPECIALIDAD:** Lic. Ana Gabriela Paz Arauz  
-**DOCENTE TUTOR:** Lic. Ronald Silver Quino Torrez  
+**DOCENTE TUTOR:** Lic. Ivanna Leminka López Sanabria  
 **NÚCLEO EDUCATIVO:** Núcleo Educativo "Las Gamas"  
 **UBICACIÓN Y GESTIÓN:** Warnes – Santa Cruz – Bolivia | Gestión 2026  
 
