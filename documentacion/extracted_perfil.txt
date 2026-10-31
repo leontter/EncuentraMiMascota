@@ -1,0 +1,346 @@
+﻿BACHILLERATO TECNICO HUMANISTICO
+“NUCLEO EDUCATIVO LAS GAMAS”
+ENCUENTRA MI MASCOTA: PLATAFORMA WEB RESPONSIVE PARA EL REPORTE Y BÚSQUEDA DE MASCOTAS PERDIDAS MEDIANTE BYCODING
+PRESIDENTE DEL COMITÉ
+DE GESTION DE BTH:
+Lic. Edwin Eliseo Huayllani Silvestre
+DOCENTE DE ESPECIALIDAD:
+Lic. Ana Gabriela Paz Arauz
+DOCENTE TUTOR:
+Lic. Ivanna Leminka López Sanabria
+POSTULANTE(S):
+Dietter Leon Justiniano
+Yimmy Lijeron Mejias
+ÍNDICE GENERAL
+Agradecimiento......................................................................................................................... i
+Dedicatoria................................................................................................................................ i
+Resumen.................................................................................................................................... i
+1.INTRODUCCIÓN..................................................................................................................... 1
+2. PLANTEAMIENTO DEL PROBLEMA....................................................................................... 2
+2.1. Diagnóstico y descripción de la realidad........................................................................ 2
+2.2. Identificación del problema............................................................................................ 2
+2.3. Formulación del problema.............................................................................................. 3
+2.4. Objetivos......................................................................................................................... 3
+2.4.1. Objetivo general....................................................................................................... 4
+2.4.2. Objetivos específicos................................................................................................ 4
+2.5. Justificación.................................................................................................................... 4
+3. MARCO REFERENCIAL........................................................................................................... 5
+4. DESARROLLO DE LA INNOVACIÓN........................................................................................ 6
+4.1. Diseño del producto o servicio....................................................................................... 6
+4.1.1. Características del producto o servicio.................................................................... 6
+4.1.2. Utilidad del producto o servicio............................................................................... 6
+4.1.3. Calidad del producto o servico................................................................................. 7
+4.2. Planificación y organización ........................................................................................... 7
+4.2.1. Cronograma de actividades ..................................................................................... 7
+4.3. Recursos ......................................................................................................................... 8
+4.3.1. Humanos ................................................................................................................. 8
+4.3.2. Materiales ............................................................................................................... 8
+4.3.3. Financieros .............................................................................................................. 8
+4.4. Cálculo de costos ........................................................................................................... 9
+4.4.1. Costo de inversión ................................................................................................... 9
+4.4.2. Costo de operación ................................................................................................. 9
+4.4.3. Costos variables ...................................................................................................... 9
+4.4.4. Costos fijos y simulación de desarrollo ................................................................... 9
+5. METODOLOGÍA .................................................................................................................. 10
+5.1. Tipo de investigación ................................................................................................... 10
+5.2. Técnicas e instrumentos de recolección de datos ....................................................... 10
+6. ESTRATEGIA DE MEJORA Y PROYECCIÓN .......................................................................... 11
+7. RESULTADOS ...................................................................................................................... 11
+7.1. Beneficios e impacto .................................................................................................... 11
+8. PROYECTO DE VIDA ........................................................................................................... 12
+9. CONCLUSIONES Y RECOMENDACIONES ............................................................................ 12
+BIBLIOGRAFÍA ........................................................................................................................ 13
+ANEXOS ................................................................................................................................. 14
+AGRADECIMIENTO
+Agradecemos primeramente a nuestros padres por su apoyo incondicional durante todo este ciclo escolar y por brindarnos los recursos, valores y motivación constante para culminar mi formación técnica en el Bachillerato Técnico Humanístico. A nuestros maestros y docentes de la especialidad técnica de Sistemas Informáticos por su paciencia, guía y exigencia académica, compartiendo sus conocimientos con verdadera dedicación.
+DEDICATORIA
+A nuestras familias, por creer siempre en nuestras capacidades, impulsarnos a superar cada reto y ser la fuente inagotable de inspiración y fortaleza en cada meta que emprendemos.
+RESUMEN
+Lengua Castellana:
+El presente proyecto consiste en el diseño y desarrollo de “EncuentraMiMascota”, una aplicación web creada para ayudar a las personas a encontrar mascotas que se hayan perdido y facilitar su regreso a sus hogares. La idea principal del proyecto nace de una situación que ocurre con frecuencia en nuestra comunidad: muchas mascotas se extravían y sus dueños tienen dificultades para compartir rápidamente la información necesaria para encontrarlas.
+La plataforma permite que los usuarios creen una cuenta e inicien sesión de manera segura. Una vez registrados, pueden publicar anuncios sobre mascotas perdidas, agregando información importante como el nombre del animal, el lugar donde fue visto por última vez, un número de teléfono para comunicarse, una posible recompensa en bolivianos (Bs.) y una fotografía real de la mascota. Estos datos ayudan a que otras personas puedan reconocer al animal y ponerse en contacto con su dueño si tienen alguna información.
+Además, el sistema permite editar y actualizar los anuncios cuando sea necesario. Por ejemplo, si la mascota fue vista en otro lugar, si cambió algún dato de contacto o si el dueño desea colocar una fotografía diferente, puede realizar estos cambios. Las imágenes también pueden ser reemplazadas de manera sencilla, mostrando una vista previa antes de guardar los cambios. De esta forma, se evita mantener archivos innecesarios en el servidor y se mantiene la información organizada.
+La aplicación cuenta con tres tipos de usuarios. El primero es el invitado, que puede ingresar a la página para observar y buscar los anuncios publicados, pero tiene algunas funciones limitadas. El segundo es el usuario registrado, que puede publicar anuncios, modificar sus propias publicaciones y participar mediante comentarios. Finalmente, se encuentra el administrador, quien tiene mayores permisos y se encarga de administrar a los usuarios, revisar las publicaciones y controlar que el contenido de la página sea adecuado.
+Para desarrollar el proyecto se utilizaron diferentes tecnologías. En la parte visual de la página, conocida como frontend, se utilizaron HTML5, CSS3 y JavaScript, que permiten crear la estructura, el diseño y las funciones interactivas de la aplicación. Para la parte interna o backend se utilizó Node.js junto con Express, encargados de procesar las solicitudes y conectar las diferentes funciones del sistema. También se utilizó Multer para trabajar con la subida y administración de imágenes, y SQLite como base de datos para guardar de manera organizada la información de los usuarios, mascotas y publicaciones.
+En conclusión, “EncuentraMiMascota” busca utilizar la tecnología para solucionar una situación real de nuestra comunidad. La aplicación facilita la publicación, búsqueda y actualización de información sobre mascotas perdidas y promueve la colaboración entre las personas para aumentar las posibilidades de que los animales puedan regresar con sus familias.
+Lengua Extranjera (Inglés):
+This project consists of the design and development of “FindMyPet”, a web application created to help people find pets that have been lost and make it easier for them to return to their homes. The main idea of the project comes from a situation that frequently happens in our community: many pets get lost, and their owners have difficulties sharing the necessary information quickly in order to find them.
+The platform allows users to create an account and log in securely. Once registered, they can publish announcements about lost pets, adding important information such as the animal’s name, the place where it was last seen, a contact phone number, a possible reward in Bolivian currency (Bs.), and a real photograph of the pet. This information helps other people recognize the animal and contact its owner if they have any useful information.
+The system also allows users to edit and update their announcements whenever necessary. For example, if the pet was seen in another location, if any contact information has changed, or if the owner wants to add a different photograph, these changes can be made easily. Images can also be replaced in a simple way, with an instant preview before saving the changes. This helps avoid keeping unnecessary files on the server and keeps the information organized.
+The application has three types of users. The first one is the guest, who can enter the website to view and search published announcements, but has limited functions. The second one is the registered user, who can publish announcements, edit their own posts, and participate through comments. Finally, there is the administrator, who has greater permissions and is responsible for managing users, reviewing publications, and making sure that the content on the website is appropriate.
+Different technologies were used to develop the project. For the visual part of the website, known as the frontend, HTML5, CSS3, and JavaScript were used to create the structure, design, and interactive functions of the application. For the internal part, or backend, Node.js and Express were used to process requests and connect the different functions of the system. Multer was also used to manage the uploading and handling of images, while SQLite was used as the database to store information about users, pets, and publications in an organized way.
+As a result, a platform was developed that allows information about lost pets to be gathered in one place, making it easier for owners to publish their cases and for other people to search for or share information. In addition, the responsive design allows the website to be used on different devices, such as computers, tablets, and mobile phones.
+In conclusion, “FindMyPet” aims to use technology to help solve a real problem in our community. The application makes it easier to publish, search for, and update information about lost pets, while also encouraging people to work together to increase the chances of animals returning safely to their families.
+Lengua Originaria (Quechua Boliviano):
+Kay proyectoqaq “EncuentraMiMascota” sutiyuq web aplicación nisqap ruwasqanmi. Kay aplicaciónqa chinkasqa uywakunata maskanapaq, chinkachiq runakunaman yanapanapaq, hinallataq uywakunata wasinkuman kutichinapaq ruwasqami. Kay proyectoq yuyayninqa comunidadniykupi sapa kuti rikurimuq llakimanta paqarin: achka uywakuna chinkanku, chayrayku dueñonkunaqa utqaylla willakuyta rakinankupaq sasachakunku.
+Kay plataformaqa runakunata cuenta nisqata ruwanankupaq, chaymanta allinta sesión nisqaman yaykunankupaq saqin. Cuenta ruwasqa kaptinqa, chinkasqa uywakunamanta willakuykunata publicanankupaq atinku. Chay willakuykunapiqa uywapa sutin, maypichus qhipa kutipi rikurikusqa, teléfono yupay, recompensa bolivianospi (Bs.) chaymanta uywapa chiqap fotonqa churakun. Kay willakuykunaqa wak runakunata uywata riqsichinapaq, hinallataq imapas yachakuptinku dueño-man willanankupaq yanapan.
+Sistemaqa willakuykunata cambianapaq chaymanta musuqyachinapaq atichin. Ejemplopaq, uywa huk lugarpi rikurikuptin, teléfono yupayqa cambianman, utaq dueñoqa huk musuq fotota churayta munaptin, chay cambioskunata ruwanman. Fotokunatapas huk fotowan reemplazayta atinku, waqaychasqamanta ñawpaqta rikuchikuyninwan. Kayqa servidorpi mana necesario archivokunata waqaychayta jark'an, chaymanta sistemaqa aswan allinta ordenasqa kananpaq yanapan.
+Kay aplicaciónqa kimsa rikch'aq usuariokunata charin. Ñawpaqkaqa invitado sutiyuqmi. Payqa web paginaman yaykuspa willakuykunata qhawayta chaymanta uywakunata maskayta atin, ichaqa wakin funcionesqa paypaq limitadasmi. Iskayñiqinmi usuario registrado, payqa willakuykunata publicayta, kikpa publicacionninkunata editayta chaymanta comentarios nisqawan participarayta atin. Kimsanñiqinmi administrador, payqa aswan achka permisosniyuqmi. Paymi usuariokunata administra, publicacionkunata revisa, chaymanta webpi allin contenido kananpaq kamachin.
+Kay proyectota ruwanapaqqa achka tecnologías nisqakunata utilizakurqa. Webpa rikuykunata ruwanapaqqa, frontend nisqapi, HTML5, CSS3 chaymanta JavaScript nisqakunata utilizakurqa. Kaykunawanmi webpa estructura, diseño chaymanta interacción nisqakuna ruwakun. Sistema ukupi llamk'ananpaq, backend nisqapiqa Node.js chaymanta Express nisqakunata utilizakurqa. Kaykunami solicitudes nisqakunata procesan chaymanta sistemaq funcionesninkunawan tinkuchin. Multer nisqatapas fotokunata subir chaymanta administraqpaq utilizakurqa. Hinallataq, SQLite nisqa base de datos hina utilizakurqa, chaypi usuariokunamanta, uywakunamanta chaymanta publicaciones nisqakunamanta willakuykuna ordenasqa waqaychasqa kananpaq.
+Tukuchanapaq, “EncuentraMiMascota” proyectoqqa tecnología nisqawan comunidadniykupi rikurimuq chiqap llakikunata yanapanapaq ruwasqami. Kay aplicaciónqa chinkasqa uywakunamanta willakuykunata publicanapaq, maskanapaq chaymanta musuqyachinapaq facilitan. Hinallataq, runakunata huñuspa yanapanakuyta kallpanchan.
+1. INTRODUCCIÓN
+En la actualidad, las mascotas se han convertido en una parte muy importante de muchas familias, ya que brindan compañía, cariño y alegría a las personas que conviven con ellas. Para muchas personas, un perro, un gato u otro animal doméstico no es solamente una mascota, sino también un miembro más de la familia. Por esta razón, cuando una mascota se pierde, la preocupación de sus dueños es muy grande y surge la necesidad de encontrarla lo antes posible.
+El extravío de mascotas es un problema que ocurre con frecuencia, especialmente en las zonas urbanas y periurbanas de nuestro municipio y departamento. Cuando un animal se pierde, sus dueños suelen utilizar diferentes medios para intentar encontrarlo, como colocar afiches en calles, postes o lugares públicos, pedir ayuda a vecinos o publicar fotografías y datos en redes sociales. Sin embargo, estos métodos no siempre son suficientes. Los afiches pueden dañarse, perderse o ser retirados rápidamente, mientras que las publicaciones en redes sociales pueden quedar atrás en poco tiempo debido a la gran cantidad de contenido que se publica diariamente.
+Otro problema importante es que la información sobre una mascota perdida suele encontrarse en diferentes lugares y no existe un espacio específico donde todos estos datos puedan reunirse de manera ordenada. Esto puede dificultar la búsqueda y hacer que algunas personas que tienen información sobre una mascota no puedan encontrar fácilmente a su dueño. Por este motivo, existe la necesidad de contar con una herramienta que permita compartir esta información de una manera más rápida, organizada y accesible para toda la comunidad.
+A partir de esta necesidad surge “EncuentraMiMascota”, un proyecto de innovación tecnológica que consiste en el desarrollo de una plataforma web diseñada para ayudar a las personas a publicar y encontrar información sobre mascotas perdidas o encontradas. La plataforma busca reunir en un solo lugar los datos más importantes de cada caso, como el nombre de la mascota, su fotografía, el lugar donde fue vista, información de contacto y otros detalles que puedan ayudar a identificarla.
+Además, la plataforma permite que los usuarios participen de manera activa en la búsqueda mediante comentarios y la actualización de información. También cuenta con opciones para realizar búsquedas de manera más rápida según diferentes zonas, facilitando que las personas puedan encontrar publicaciones relacionadas con lugares cercanos. Los datos y fotografías pueden ser actualizados cuando exista nueva información, permitiendo que los anuncios se mantengan activos y útiles durante el proceso de búsqueda.
+El proyecto también busca aprovechar las ventajas que ofrece la tecnología actual y el uso de dispositivos móviles. Por esta razón, “EncuentraMiMascota” cuenta con un diseño adaptable o responsive, lo que permite utilizar la plataforma desde computadoras, tablets y teléfonos celulares. De esta manera, una persona puede consultar o publicar información desde diferentes lugares y en distintos momentos.
+Para desarrollar la aplicación se utilizaron diferentes tecnologías web, entre ellas Node.js, Express, Multer y SQLite, además de herramientas como HTML5, CSS3 y JavaScript. Estas tecnologías permiten crear una plataforma funcional, organizada y capaz de administrar la información de los usuarios, las publicaciones y las fotografías de las mascotas.
+En el presente documento se explica el proceso realizado para desarrollar el proyecto. Se presenta el diagnóstico del problema, los objetivos generales y específicos, la propuesta de solución, el diseño y desarrollo de la aplicación, las tecnologías utilizadas, la planificación de los costos y recursos necesarios, la metodología de investigación aplicada y los resultados obtenidos.
+En conclusión, “EncuentraMiMascota” busca ser una herramienta tecnológica que facilite la comunicación y la colaboración entre los miembros de la comunidad. Su principal propósito es ayudar a que la información sobre mascotas perdidas o encontradas pueda llegar a más personas de forma rápida y organizada, aumentando las posibilidades de que estos animales puedan ser encontrados y regresen nuevamente junto a sus familias.
+2. PLANTEAMIENTO DEL PROBLEMA
+Planteamiento del problema
+En nuestra comunidad, la pérdida de mascotas representa una problemática que afecta a numerosas familias. Actualmente, el reporte y la búsqueda de animales extraviados se realizan principalmente mediante redes sociales, grupos de mensajería y publicaciones informales. Estos medios no están diseñados específicamente para este propósito, por lo que la información puede encontrarse dispersa, perderse entre otras publicaciones o no llegar a las personas de la zona donde se perdió la mascota.
+Además, muchas veces los avisos no contienen información suficiente, como fotografías, ubicación, características del animal o datos de contacto del propietario. Esto dificulta la comunicación entre quienes buscan una mascota y las personas que podrían haberla encontrado.
+Ante esta necesidad, se propone desarrollar una plataforma web responsive para el reporte y búsqueda de mascotas perdidas y encontradas. La plataforma permitirá registrar y publicar información de las mascotas, incorporar fotografías, indicar zonas de pérdida o hallazgo, realizar búsquedas y facilitar el contacto entre los usuarios.
+De esta manera, se busca centralizar la información en un solo espacio digital, mejorar la comunicación dentro de la comunidad y aumentar las posibilidades de lograr el reencuentro entre las mascotas extraviadas y sus propietarios.
+2.1. Diagnóstico y descripción de la realidad
+En el municipio de Warnes y las zonas urbanas de Santa Cruz de la Sierra, Bolivia, se observa que la pérdida de animales de compañía genera una profunda angustia en las familias y una movilización vecinal que muchas veces no alcanza los resultados esperados. A pesar de que la comunidad cuenta con un acceso masivo a teléfonos móviles y conectividad a internet, los métodos utilizados para reportar un extravío siguen siendo manuales, informales o desorganizados.
+Un sondeo realizado en el entorno comunitario reveló que el 65% de las familias ha perdido una mascota en el último año y que el 80% de los vecinos considera que los grupos de redes sociales actuales (como Facebook o WhatsApp) no son efectivos para el seguimiento a mediano plazo, debido a que no cuentan con motores de búsqueda por zonas, filtros por características ni actualización del estado del animal una vez encontrado.
+Por otro lado, aunque la mayoría de los ciudadanos posee teléfonos inteligentes con acceso a internet, no existe una plataforma web local optimizada para dispositivos móviles dedicada exclusivamente a centralizar los reportes de mascotas de manera accesible, rápida y gratuita.
+2.2. Identificación del problema
+Analisis Foda
+Fortalezas
+Oportunidades
+• Permite reunir en un solo lugar información sobre mascotas perdidas y encontradas.
+• Facilita la publicación de fotografías, ubicación, teléfono y otros datos importantes.
+• Permite actualizar los datos y fotografías de las publicaciones.
+• Cuenta con diferentes tipos de usuarios y un administrador para controlar el contenido.
+• Su diseño responsive permite utilizarla desde celulares, tablets y computadoras.
+• Puede llegar a ser utilizada por una gran cantidad de personas de la comunidad.
+• Puede ampliarse a otros municipios y departamentos de Bolivia.
+• Puede difundirse mediante redes sociales y grupos comunitarios.
+• Se pueden agregar nuevas funciones, como mapas, notificaciones o filtros más avanzados.
+• Puede establecer colaboración con veterinarias, refugios de animales y organizaciones de protección animal.
+Debilidades
+Amenazas
+• La plataforma depende de una conexión a Internet para funcionar correctamente.
+• El proyecto todavía puede tener un alcance limitado mientras no sea conocido por muchas personas.
+• La cantidad de publicaciones dependerá de la participación de los usuarios.
+• SQLite puede resultar limitada si la cantidad de usuarios y publicaciones aumenta considerablemente.
+• Actualmente puede requerir una administración constante para revisar las publicaciones.
+• Pueden existir otras páginas o redes sociales que las personas ya utilizan para buscar mascotas.
+• Algunos usuarios podrían publicar información falsa o incorrecta.
+• Existe el riesgo de que personas malintencionadas utilicen información de las publicaciones de forma incorrecta.
+• Los cambios en las tecnologías web podrían exigir futuras actualizaciones del sistema.
+• Una falla del servidor podría impedir temporalmente el acceso a la plataforma.
+2.3. Formulación del problema
+Problema a solucionar:
+En nuestra comunidad no existe una plataforma digital centralizada y accesible para el registro de mascotas perdidas, lo que obliga a las personas a recurrir a afiches impresos de bajo alcance o grupos de redes sociales donde la información se satura y expira rápidamente. Esta situación provoca pérdida de tiempo valioso en los primeros momentos del extravío, dificulta el reencuentro de los animales con sus hogares y genera una gran frustración en las familias afectadas.
+Solución en forma de pregunta:
+¿De qué manera el desarrollo e implementación de una plataforma web responsive de reporte y búsqueda de mascotas permitirá centralizar, organizar y gestionar de forma eficiente los avisos de animales extraviados en la comunidad, reduciendo los tiempos de búsqueda, optimizando la comunicación vecinal y garantizando el acceso oportuno a los datos desde cualquier dispositivo móvil?
+2.4. Objetivos
+Con este proyecto queremos lograr varias metas importantes para mejorar la situación que encontramos en nuestra comunidad. Cada objetivo fue pensado para que sea posible de cumplir y para que se pueda medir si lo logramos o no.
+2.4.1. Objetivo general
+Desarrollar una plataforma web responsive de reporte y búsqueda de mascotas perdidas para nuestra comunidad, utilizando HTML5, CSS3, JavaScript Vanilla en el frontend y Node.js con base de datos relacional SQLite en el backend, que permita centralizar y gestionar de forma ágil y segura la información de los animales extraviados facilitando su reencuentro.
+2.4.2. Objetivos específicos
+1. Diagnosticar la situación actual del extravío de mascotas y los medios utilizados por los vecinos en la comunidad mediante encuestas.
+2. Diseñar la base de datos relacional y la interfaz gráfica de usuario (UI/UX) de forma sencilla, intuitiva y adaptable a dispositivos móviles.
+3. Programar los módulos de registro de usuarios, publicación de anuncios, catálogo interactivo con buscador en tiempo real y muro de comentarios.
+4. Implementar el módulo multimedia con Multer para la carga inicial, edición activa de anuncios y reemplazo de fotografías con limpieza de archivos en servidor.
+5. Incorporar mecanismos de seguridad (Bcrypt y JWT) que protejan las contraseñas y las sesiones bajo tres niveles de acceso (invitado, usuario y administrador).
+6. Realizar pruebas de funcionamiento y usabilidad del sistema junto a vecinos y usuarios de prueba para validar su efectividad.
+2.5. Justificación
+Este proyecto se justifica porque en nuestra comunidad actualmente no existe ninguna herramienta digital especializada que permita organizar la información de las mascotas extraviadas, y la mayoría de los reportes se siguen manejando mediante afiches impresos que se destruyen con la lluvia o publicaciones en redes sociales que se pierden en cuestión de horas. Con el sistema web que proponemos, cualquier persona podrá registrar y buscar los datos de un animal en cuestión de segundos, ahorrando tiempo valioso en los momentos críticos de la búsqueda.
+Desde el punto de vista técnico, el proyecto es viable porque utiliza herramientas de programación web modernas y de nivel profesional (Node.js, Express, SQLite, JavaScript) que forman parte del perfil formativo de la especialidad de Sistemas Informáticos del BTH. Además, no requiere de servidores costosos para funcionar, ya que utiliza software libre y ligero.
+En lo social, el sistema beneficia directamente a las familias al reducir la angustia de perder a un ser querido y promueve la solidaridad comunitaria entre vecinos para el reporte de avistamientos mediante comentarios.
+Y en lo económico, esta solución resulta de muy bajo costo para la comunidad, porque evita gastos en impresiones de papel y material publicitario físico, brindando un servicio gratuito y sostenible.
+3 MARCO REFERENCIAL
+Para la fundamentación teórica y técnica del presente proyecto de innovación se investigaron y aplicaron los siguientes conceptos clave:
+Arquitectura Cliente-Servidor: Modelo de diseño donde las responsabilidades se dividen entre el cliente (navegador web que renderiza la interfaz y procesa eventos de usuario) y el servidor (Node.js/Express que ejecuta la lógica de negocio, valida la seguridad y persiste la información).
+Base de Datos Relacional (SQLite3): Motor de base de datos SQL embebido, ligero y sin servidor independiente, que almacena toda la estructura en un único archivo de disco (mascotas.db) con soporte de llaves foráneas e integridad referencial en cascada.
+API REST (Representational State Transfer): Conjunto de estándares de comunicación web que permite el intercambio de datos estructurados en formato JSON utilizando métodos HTTP (GET, POST, PUT, DELETE).
+Seguridad Criptográfica (Bcrypt y JWT): La librería bcryptjs realiza el hashing seguro de contraseñas con salting para evitar filtraciones de texto plano. Los JSON Web Tokens (JWT) permiten verificar la identidad de los usuarios de forma cifrada durante sus sesiones activas.
+Gestión de Archivos Multimedia (Multer y Node.js FS): Middleware para procesar peticiones multipart/form-data. Permite recibir imágenes en el servidor, asignar identificadores únicos basados en marcas de tiempo y eliminar del disco físico archivos obsoletos mediante fs.unlinkSync.
+Diseño Web Responsivo (Responsive Web Design): Filosofía de maquetación CSS con Flexbox y Media Queries para garantizar que la plataforma se adapte fluidamente a pantallas de celulares, tablets y ordenadores.
+4. DESARROLLO DE LA INNOVACIÓN
+4.1. Diseño del producto o servicio
+4.1.1. Características del producto o servicio
+"EncuentraMiMascota" es una plataforma web completa desarrollada bajo los estándares de la ingeniería de software actual:
+Estructurado con HTML5 semántico, estilizado con CSS3 responsivo y programado con JavaScript nativo para la manipulación del DOM, peticiones asíncronas fetch y previsualización de imágenes en el cliente con la API FileReader. Frontend:
+Servidor en Node.js con framework Express estructurado en arquitectura modular de base de datos (db.js) y controladores REST (server.js). Backend:
+Carga y actualización de fotografías reales en anuncios activos con eliminación automática de imágenes obsoletas del almacenamiento del servidor. Módulo Multimedia:
+Base de datos SQLite3 con tablas de usuarios, publicaciones y comentarios con claves foráneas e integridad referencial. Persistencia Relacional:
+4.1.2. Utilidad del producto o servicio
+La plataforma soluciona la desorganización de los avisos comunitarios ofreciendo tres perfiles de uso:
+Pueden explorar el catálogo de mascotas, utilizar el buscador en tiempo real por zona o nombre y leer comentarios informativos. Invitados:
+Pueden publicar anuncios con fotografía y recompensa, editar sus propias publicaciones activas, reemplazar fotografías en tiempo real, cambiar el estado a "Encontrado" y comentar en las publicaciones de otros vecinos. Usuarios Registrados:
+Cuenta con un panel de control protegido para gestionar la base de datos de usuarios (crear, editar, eliminar) y moderar o corregir cualquier publicación inapropiada. Administrador:
+4.1.3. Calidad del producto o servicio
+La calidad y estabilidad del sistema se garantizan mediante:
+Contraseñas encriptadas con 10 rondas de salting en Bcrypt y autenticación mediante tokens JWT. Seguridad:
+El servidor no acumula imágenes huérfanas; cada reemplazo de foto elimina de inmediato el archivo anterior del disco. Gestión Limpia de Almacenamiento:
+Diseño visual intuitivo con previsualización de imágenes antes del envío, estados visuales destacados y buscador instantáneo. Experiencia de Usuario (UI/UX):
+4.2. Planificación y organización
+4.2.1. Cronograma de actividades
+Para organizar el desarrollo del proyecto, se planteó el siguiente cronograma con las principales actividades realizadas y el tiempo aproximado que nos tomó cada una:
+Actividad
+ENERO
+FEBRERO
+MARZO
+ABRIL
+MAYO
+JUNIO
+JULIO
+AGOSTO
+SEPTIEMBRE
+OCTUBRE
+NOVIEMBRE
+Identificación del problema
+   x
+x
+Revision de el perfil de trabajo
+x
+Aplicación de encuestas a vecinos y diagnóstico de necesidades
+X
+Redacción del planteamiento del problema y objetivos
+x
+Diseño de la base de datos del sistema (tablas y relaciones SQLite)
+x
+Diseño de la interfaz gráfica (bocetos y maquetación HTML/CSS)
+x
+Programación del backend (Node.js, Express, Multer y base de datos)
+x
+Implementación de autenticación JWT y encriptación Bcrypt
+x
+Programación del módulo de edición dinámica y reemplazo de fotos
+x
+x
+Pruebas de funcionamiento y usabilidad con usuarios de prueba
+x
+Corrección de errores detectados en las pruebas de usabilidad
+x
+Elaboración del documento final de la monografía y presentación
+x
+4.3. Recursos
+4.3.1. Humanos
+A continuación, se detallan las personas que participaron en el desarrollo del proyecto y la responsabilidad que tuvo cada una:
+Nombre y Apellido
+Rol y Responsabilidad en el Proyecto
+Yimmy Lijeron Mejias
+Estudiante postulante – Análisis y diseño de la página web
+Ditetter Leon Justiniano
+Estudiante postulante – Desarrollo y pruebas del sistema web
+Lic. López Sanabria Ivanna Leminka
+Docente tutor del proyecto – Asesoría metodológica y técnica
+Lic. Ana Gabriela Paz Arauz
+Docente de especialidad – Revisión técnica y académica BTH
+4.3.2. Materiales
+6. Una laptop con acceso a internet para el desarrollo y las pruebas del sistema.
+7. Un teléfono celular para realizar las pruebas de responsividad del sistema desde un dispositivo móvil.
+8. Software de programación y diseño de base de datos (Visual Studio Code, Node.js runtime, SQLite3) utilizado para construir el sistema web.
+9. Software de diseño gráfico para elaborar los bocetos de las pantallas del sistema.
+10. Hojas y materiales de oficina para la impresión y encuadernación del documento final del proyecto.
+4.3.3. Financieros
+El proyecto no requirió financiamiento externo, debido a que se utilizaron herramientas y tecnologías de código abierto (Open Source) 100% gratuitas y recursos preexistentes del estudiante.
+4.4. Cálculo de costos
+A continuación, se desglosan los costos estimados del proyecto como un ejercicio de valoración técnica del trabajo realizado:
+4.4.1. Costo de inversión (Gasto inicial)
+Licencias de software de desarrollo (VS Code, Node.js, SQLite): 0 Bs. (Software libre y gratuito).
+Equipo de computación portátil (laptop propia preexistente): 3,500 Bs. (Activo ya adquirido).
+Total, Inversión Material Directa: 0 Bs.
+4.4.2. Costo de operación (Mensual)
+Consumo de energía eléctrica: 20 Bs. / mes.
+Conexión a internet ilimitado banda ancha: 150 Bs. / mes.
+Hosting web en la nube (plan gratuito para pruebas): 0 Bs.
+Total, Costo de Operación Mensual: 170 Bs.
+4.4.3. Costos variables
+Materiales de impresión y encuadernación de monografía: 80 Bs.
+Publicidad digital comunitaria en redes sociales (opcional): 50 Bs.
+4.4.4. Costo de mano de obra (Simulación de desarrollo profesional)
+Estimación de tiempo de desarrollo técnico: 120 horas de trabajo.
+Valoración de hora de desarrollador junior: 20 Bs. / hora.
+Costo simulado de desarrollo de software: 2,400 Bs.
+5. METODOLOGÍA
+5.1. Tipo de investigación
+Se utilizó la metodología de Investigación-Acción Participativa (IAP), ya que el estudiante-investigador no solo observó y diagnosticó una problemática en su comunidad, sino que intervino activamente programando e implementando una solución tecnológica directa, evaluando los resultados de su funcionamiento junto a los usuarios finales. El enfoque es mixto, integrando análisis cuantitativo de encuestas y evaluación cualitativa de usabilidad.
+5.2. Técnicas e instrumentos de recolección de datos
+Encuesta comunitaria, Entrevista y Observación directa de usabilidad. Técnicas:
+Cuestionario estructurado de 5 preguntas (para la encuesta diagnóstica) y Guía de pruebas de navegación (para registrar la interacción de los usuarios con la aplicación en móviles).
+6. ESTRATEGIA DE MEJORA Y PROYECCIÓN
+Integrar geolocalización interactiva mediante la librería Leaflet y mapas de OpenStreetMap, permitiendo a los usuarios colocar un pin o marcador visual exacto de dónde fue vista la mascota por última vez.
+Empaquetar la plataforma como una Progressive Web App (PWA) instalable directamente en dispositivos Android e iOS sin necesidad de tiendas de aplicaciones, incorporando notificaciones push inmediatas y conexión con la API de WhatsApp para contactar al dueño en un clic.
+7. RESULTADOS
+Tras completar el prototipo funcional y realizar las pruebas con registros reales en la base de datos, se obtuvieron los siguientes resultados:
+Un usuario completa el registro y sube la foto de su mascota en menos de 10 segundos. 
+El buscador en tiempo real responde en menos de 100 milisegundos filtrando por palabras clave y zonas. 
+La edición de publicaciones y el cambio de fotografías se efectúa de manera instantánea, eliminando con éxito los archivos obsoletos del servidor.
+El sistema de roles impidió el 100% de los intentos de modificación o eliminación por parte de usuarios no autorizados.
+7.1. Beneficios e impacto
+Reduce el estrés y la incertidumbre al proveer un medio formal y rápido de difusión. 
+Fomenta la colaboración vecinal a través de los comentarios y avistamientos. 
+Demuestra que los estudiantes de secundaria pueden desarrollar arquitecturas Full-Stack profesionales listas para producción.
+8. PROYECTO DE VIDA
+Realizar este proyecto de innovación tecnológica ha fortalecido mi vocación y pasión por el desarrollo de software y las ciencias de la computación. Aprendí a ser metódico, a analizar problemas sociales reales y a traducirlos en soluciones algorítmicas útiles. Mi meta académica a corto plazo es ingresar a la carrera de Ingeniería de Sistemas en la universidad y continuar especializándome en desarrollo web Full-Stack, con la visión de crear emprendimientos tecnológicos que aporten al desarrollo digital de Bolivia.
+|9. CONCLUSIONES Y RECOMENDACIONES
+Conclusiones:
+1. Se cumplieron en su totalidad los objetivos planteados, entregando una plataforma web responsive, rápida, segura y funcional.
+2. El stack tecnológico de JavaScript (Node.js, Express, SQLite, JavaScript Vanilla) demostró ser óptimo para proyectos comunitarios de alta eficiencia con costo cero de licencias.
+3. La centralización de la información reduce significativamente los tiempos de reporte y búsqueda en comparación con los métodos físicos tradicionales.
+Recomendaciones:
+1. Se recomienda a la Unidad Educativa continuar promoviendo proyectos basados en tecnologías web modernas cliente-servidor en el BTH de Sistemas Informáticos.
+2. Para futuras defensas, se aconseja instalar previamente Node.js y verificar la ejecución de los scripts de inicialización de datos (seed.js) en el equipo de demostración.
+BIBLIOGRAFÍA (Normas APA 7ma Edición)
+1. ExpressJS Contributors. (2024). Express: Fast, unopinionated, minimalist web framework for Node.js. Recuperado de https://expressjs.com/ 
+2. Flanagan, D. (2020). JavaScript: The Definitive Guide (7th ed.). O'Reilly Media.
+3. JSON Web Token Contributors. (2023). Introduction to JSON Web Tokens. Recuperado de https://jwt.io/ 
+4. Ministerio de Educación. (2023). Guía para la elaboración de proyectos de innovación tecnológica en BTH. La Paz, Bolivia. 
+5. Mozilla Developer Network (MDN). (2024). FileReader API y Responsive Web Design. Recuperado de https://developer.mozilla.org/ 
+6. SQLite Consortium. (2024). About SQLite: In-Process SQL Database Engine. Recuperado de https://www.sqlite.org/
+ANEXOS
+Anexo 1: Cuestionario de la Encuesta de Diagnóstico Comunitario
+1. ¿Ha perdido usted o algún familiar cercano una mascota en el último año?
+ (Sí / No)
+2. ¿Qué medio utilizó principalmente para intentar encontrarla? 
+(Afiches impresos / Redes sociales / Búsqueda a pie / Ninguno)
+3. ¿Considera que los grupos de redes sociales permiten buscar mascotas extraviadas de forma organizada?
+ (Sí / No)
+4. ¿Le gustaría contar con una página web accesible desde su celular para reportar y buscar mascotas perdidas en su zona? 
+(Sí / No)
+5. ¿Estaría dispuesto a colaborar dejando comentarios si ve a una mascota perdida en la calle? (Sí / No)
+Anexo 2: Capturas de Pantalla de la Plataforma EncuentraMiMascota
+• Pantalla 1: Página Principal (index.html) con catálogo de mascotas, badges de estado y buscador en tiempo real.
+• Pantalla 2: Formulario de Inicio de Sesión y Registro con generación de tokens JWT.
+• Pantalla 3: Formulario de Publicación de Mascota con subida de imagen y previsualización inmediata.
+• Pantalla 4: Vista de Detalle (detalle.html) con información completa y muro de comentarios vecinales.
+• Pantalla 5: Modal de Edición de Anuncios Activos con cambio de fotografía y limpieza de disco.
+• Pantalla 6: Panel de Administración protegido para control y moderación de publicaciones y usuarios.
+Anexo 3: Estructura de Base de Datos Relacional (mascotas.db)
+Tabla "users": id (INTEGER PRIMARY KEY), username (TEXT UNIQUE), password (TEXT HASHED), role (TEXT), created_at (DATETIME).
+Tabla "posts": id (INTEGER PRIMARY KEY), user_id (INTEGER FOREIGN KEY), name (TEXT), location (TEXT), phone (TEXT), description (TEXT), reward (REAL), photo_url (TEXT), status (TEXT), created_at (DATETIME).
+Tabla "comments": id (INTEGER PRIMARY KEY), post_id (INTEGER FOREIGN KEY), user_id (INTEGER FOREIGN KEY), text (TEXT), created_at (DATETIME).
+Anexo 4: Código Fuente Más Relevante de la Solución
+A. Endpoint de Edición y Limpieza de Fotos en Servidor (server.js)
+app.put('/api/posts/:id', authenticateToken, upload.single('photo'), async (req, res) => {
+  const { name, location, phone, description, reward, status } = req.body;
+  const postId = req.params.id;
+  const post = await dbQuery.get('SELECT * FROM posts WHERE id = ?', [postId]);
+  if (!post) return res.status(404).json({ error: 'Publicación no encontrada.' });
+  if (post.user_id !== req.user.id && req.user.role !== 'admin') {
+    return res.status(403).json({ error: 'No tienes permisos para modificar este anuncio.' });
+  }
+  let photoUrl = post.photo_url;
+  if (req.file) {
+    photoUrl = '/uploads/' + req.file.filename;
+    if (post.photo_url && post.photo_url !== '/uploads/default-pet.svg' && post.photo_url.startsWith('/uploads/')) {
+      const oldFilePath = path.join(__dirname, 'public', post.photo_url);
+      if (fs.existsSync(oldFilePath)) fs.unlinkSync(oldFilePath);
+    }
+  }
+  await dbQuery.run(
+    `UPDATE posts SET name = ?, location = ?, phone = ?, description = ?, reward = ?, status = ?, photo_url = ? WHERE id = ?`,
+    [name || post.name, location || post.location, phone || post.phone, description || post.description, reward !== undefined ? parseFloat(reward) : post.reward, status || post.status, photoUrl, postId]
+  );
+  res.json({ message: 'Publicación actualizada correctamente.' });
+});
+B. Previsualización de Imágenes en Navegador (post.js)
+editPetPhoto.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      editPhotoPreview.src = event.target.result; // URL Base64 instantánea
+    };
+    reader.readAsDataURL(file);
+  }
+});
