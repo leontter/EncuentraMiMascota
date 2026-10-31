@@ -5,6 +5,8 @@ const multer = require('multer');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { dbQuery } = require('./db');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -31,6 +33,9 @@ const upload = multer({ storage: storage });
 // Middlewares globales
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Documentación de la API con Swagger UI
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Middleware para verificar la sesión/token JWT
 function authenticateToken(req, res, next) {
@@ -483,12 +488,14 @@ app.delete('/api/users/:id', authenticateToken, requireAdmin, async (req, res) =
 // REDIRECCIÓN FRONTEND DE RUTA BASE A INDEX
 // ==========================================
 app.get('*', (req, res, next) => {
-  // Si la petición pide API, seguir adelante
-  if (req.url.startsWith('/api')) return next();
+  // Si la petición pide API o Swagger UI, seguir adelante
+  if (req.url.startsWith('/api') || req.url.startsWith('/api-docs')) return next();
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Iniciar servidor
 app.listen(PORT, () => {
   console.log(`Servidor de EncuentraMiMascota corriendo en http://localhost:${PORT}`);
+  console.log(`Documentación Swagger disponible en http://localhost:${PORT}/api-docs`);
 });
+
