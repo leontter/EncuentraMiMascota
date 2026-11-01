@@ -80,7 +80,7 @@ function renderNavbar() {
   if (!navbarElement) return;
 
   const user = getUser();
-  let html = `<li><a href="/index.html" class="username" style="margin-right: 15px;">Inicio</a></li>`;
+  let html = `<li><a href="/index.html" class="nav-link">Inicio</a></li>`;
 
   if (user) {
     // Usuario Autenticado (Administrador o Usuario normal)
@@ -88,7 +88,7 @@ function renderNavbar() {
       <div class="user-menu">
         <span class="username">¡Hola, ${user.name}! ${user.role === 'admin' ? '(Admin)' : ''}</span>
         ${user.role === 'admin' ? `<li><a href="/admin.html" class="btn btn-outline btn-sm">Panel Admin</a></li>` : ''}
-        <li><a href="/crear-anuncio.html" class="btn btn-primary">Reportar Mascota</a></li>
+        <li><a href="/crear-anuncio.html" class="btn btn-primary btn-sm">Reportar Mascota</a></li>
         <li><button onclick="logout()" class="btn btn-danger btn-sm">Cerrar Sesión</button></li>
       </div>
     `;

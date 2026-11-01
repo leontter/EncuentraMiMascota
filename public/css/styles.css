@@ -31,6 +31,11 @@
   padding: 0;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   font-family: var(--font-family);
   background-color: var(--bg-main);
@@ -67,7 +72,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  min-height: 70px;
+  padding: 10px 0;
 }
 
 .brand {
@@ -77,17 +83,33 @@ a {
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--primary-color);
+  white-space: nowrap;
 }
 
 .brand-icon {
   font-size: 1.8rem;
+  line-height: 1;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   list-style: none;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
 }
 
 /* Botones */
@@ -769,4 +791,84 @@ textarea.form-input {
 
 .main-footer p {
   margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MÓVILES Y PANTALLAS PEQUEÑAS)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    min-height: auto;
+    padding: 10px 0 12px;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .brand {
+    font-size: 1.25rem;
+    justify-content: center;
+  }
+
+  .brand-icon {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links li {
+    display: inline-flex;
+  }
+
+  .nav-links .btn {
+    padding: 7px 14px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .nav-link {
+    padding: 7px 10px;
+    font-size: 0.88rem;
+  }
+
+  .user-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .user-menu .username {
+    width: 100%;
+    text-align: center;
+    font-size: 0.88rem;
+    margin-bottom: 2px;
+  }
+}
+
+@media (max-width: 400px) {
+  .brand {
+    font-size: 1.15rem;
+  }
+
+  .nav-links .btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .nav-link {
+    padding: 6px 8px;
+    font-size: 0.82rem;
+  }
 }
