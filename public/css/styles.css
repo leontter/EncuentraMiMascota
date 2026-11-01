@@ -262,10 +262,28 @@ a {
   border: 1px solid var(--border-color);
 }
 
+.card-clickable {
+  cursor: pointer;
+}
+
+.card-link-wrapper {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--border-radius);
+}
+
+.card-link-wrapper:hover .card {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
 .card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
 }
+
 
 .card-img-container {
   position: relative;

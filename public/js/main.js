@@ -58,28 +58,28 @@ document.addEventListener('DOMContentLoaded', () => {
         : '❤️ Sin recompensa';
 
       return `
-        <article class="card">
-          <div class="card-img-container">
-            <img src="${post.photo_url}" 
-                 alt="${post.name}" 
-                 class="card-img" 
-                 onerror="this.src='/uploads/default-pet.svg'">
-            <span class="badge-status ${statusClass}">${post.status}</span>
-          </div>
-          <div class="card-content">
-            <h3 class="card-title">${post.name}</h3>
-            <div class="card-location">
-              <span>📍</span> <span>${post.location}</span>
+        <a href="/detalle.html?id=${post.id}" class="card-link-wrapper" style="text-decoration:none; color:inherit; display:block;">
+          <article class="card card-clickable">
+            <div class="card-img-container">
+              <img src="${post.photo_url}" 
+                   alt="${post.name}" 
+                   class="card-img" 
+                   onerror="this.src='/uploads/default-pet.svg'">
+              <span class="badge-status ${statusClass}">${post.status}</span>
             </div>
-            <p class="card-description">${post.description}</p>
-            <div class="card-footer">
-              <span class="card-reward">${rewardText}</span>
-              <a href="/detalle.html?id=${post.id}" class="card-link">
-                Ver Detalles <span>➔</span>
-              </a>
+            <div class="card-content">
+              <h3 class="card-title">${post.name}</h3>
+              <div class="card-location">
+                <span>📍</span> <span>${post.location}</span>
+              </div>
+              <p class="card-description">${post.description}</p>
+              <div class="card-footer">
+                <span class="card-reward">${rewardText}</span>
+                <span class="card-link">Ver Detalles <span>➔</span></span>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </a>
       `;
     }).join('');
 
